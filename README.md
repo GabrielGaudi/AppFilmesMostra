@@ -5,5 +5,10 @@ Gabriel Gaudí Pozzi
 Susana Garcia
 <br>
 
-O aplicativo possui uma tela principal, com os cartazes dos filmes referência. O usuário pode clicar nelas e será levado à uma página separada, cada filme possuindo uma própria.
-A página de cada filme contém: o mesmo cartaz presente na página inicial, uma sinopse curta e várias informações sobre ele, incluindo o(s) diretor(es), elenco e uma galeria com imagens do filme.
+Documentação e protótipo de alto nível de um aplicativo mobile para Android feito com a plataforma Flutter, sobre os filmes usados como inspiração para o jogo da mostra cultural.
+
+## Wiki
+-   [Descrição do App](https://github.com/GabrielGaudi/AppFilmesMostra/wiki)</br>
+-   [Mapa de navegação do App](https://github.com/GabrielGaudi/AppFilmesMostra/wiki/Mapa-de-Navega%C3%A7%C3%A3o)<br>
+-   [Imagens do protótipo](https://github.com/GabrielGaudi/AppFilmesMostra/wiki/Prot%C3%B3tipo-(aplica%C3%A7%C3%A3o))<br>
+-   [Widgets do Flutter no App](https://github.com/GabrielGaudi/AppFilmesMostra/wiki/Widgets-utilizados)
