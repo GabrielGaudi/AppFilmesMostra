@@ -51,7 +51,7 @@ class GaleriaPagina extends StatelessWidget {
         interactive: true,
         trackVisibility: true,
            child: MasonryGridView.builder(
-          
+            controller: controleBarra,
             padding: EdgeInsets.all(16.0),
             gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
             itemCount: 7,

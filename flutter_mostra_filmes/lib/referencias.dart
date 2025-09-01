@@ -49,6 +49,7 @@ class ReferenciasFilmesPagina extends StatelessWidget {
         interactive: true,
         trackVisibility: true,
           child: ListView(
+            controller: controleBarra,
             padding: EdgeInsets.all(8.0),
             children: [
               

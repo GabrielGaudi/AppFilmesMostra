@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mostra_filmes/menu_filmes.dart';
 import 'main.dart';
 import 'referencias.dart';
-
+import 'package:url_launcher/url_launcher.dart';
+import 'galeria_info.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart';
 
 void main(){
   runApp(const BelaFeraSobre());
@@ -12,6 +15,14 @@ void main(){
 
 class BelaFeraSobre extends StatelessWidget {
   const BelaFeraSobre({super.key});
+
+
+  Future<void> _launchURL(Uri url) async {
+
+    if (!await launchUrl(url)) {
+          throw Exception('Could not launch $url');
+      }
+  }
 
   void _navegacao(BuildContext context, int index) {
     switch(index){
@@ -32,6 +43,12 @@ class BelaFeraSobre extends StatelessWidget {
   Widget build(BuildContext context) {
     final ScrollController controleBarra = ScrollController();
 
+final elencoMapa = jsonDecode('assets/liked_songs.json');
+//final sla = Elenco.pegarJson(elencoMapa);
+//List<Elenco> membros =  List<Elenco>.from(elencoMapa.map((model)=> Elenco.pegarJson(model)));
+//final int total = membros.length;
+//final String eba = total.toString();
+
 final List<Map<String, String>> elenco = [
       {'imagem': 'assets/bela_fera_sobre/bela_elenco.png', 'nome': 'Bela'},
       {'imagem': 'assets/bela_fera_sobre/fera_elenco.png', 'nome': 'Fera'},
@@ -44,6 +61,9 @@ final List<Map<String, String>> elenco = [
       {'imagem': 'assets/bela_fera_sobre/chip_elenco.png', 'nome': 'Chip'},
     ];
     
+final Uri linkTrailer = Uri.parse('https://youtu.be/5pXjJ2fEA5Y?si=FxenAZ79wxX8pgkX');
+final Uri linkSite = Uri.parse('https://disneyanimation.com');
+final Uri linkSocial = Uri.parse('https://www.instagram.com/disneyanimation');
 
      return Scaffold(
       appBar: AppBar(
@@ -60,7 +80,9 @@ final List<Map<String, String>> elenco = [
         thumbVisibility: true,
         interactive: true,
         trackVisibility: true,
+        
         child: ListView(
+
           controller: controleBarra,
           padding: EdgeInsets.symmetric(horizontal: 25),
           children: [
@@ -74,7 +96,7 @@ final List<Map<String, String>> elenco = [
                   
                   widthFactor: 4.2,
                   alignment: Alignment.topLeft,
-                  child: Text(style: TextStyle(fontFamily: "Cormorant SC", fontSize: 35.0), "Sinopse"),
+                  child: Text(style: TextStyle(fontFamily: "Cormorant SC", fontSize: 35.0), "a"),
                 
               ),
               Text(style: TextStyle(fontFamily: "Caudex", fontSize: 20.0,), "   Moradora de uma pequena aldeia francesa, Bela tem o pai capturado pela Fera e decide entregar sua vida ao estranho ser em troca da liberdade do progenitor. No castelo, ela conhece objetos mágicos e descobre que a Fera é na verdade um príncipe que precisa de amor para voltar à forma humana."),
@@ -136,10 +158,10 @@ final List<Map<String, String>> elenco = [
               Text(style: TextStyle(fontFamily: "Cormorant SC", fontSize: 35.0), "Elenco/ Personagens"),
 
               GridView.builder(
+                primary: false,
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,
-                controller: controleBarra, 
-                itemCount: elenco.length,
+                itemCount: 2,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 1/1.1), 
                 itemBuilder: (context, count){
                   final item = elenco[count];
@@ -168,24 +190,38 @@ final List<Map<String, String>> elenco = [
 
 
                 child:  Column(
+                  
                     mainAxisSize: MainAxisSize.max,
                     spacing: 10,
                     crossAxisAlignment: CrossAxisAlignment.start,                    
                     children: [
+                      
                       Text(style: TextStyle(fontSize: 35, fontFamily: "Cormorant SC"), "Link para trailer"),
-                      Text(style: TextStyle(fontSize: 22, fontFamily: "Caudex"), "https://youtu.be/5pXjJ2fEA5Y?si=FxenAZ79wxX8pgkX"),
+                      TextButton(
+                        onPressed:() => _launchURL(linkTrailer),
+                        child: Text(style: TextStyle(fontSize: 22, fontFamily: "Caudex"), "https://youtu.be/5pXjJ2fEA5Y?si=FxenAZ79wxX8pgkX"),
+                        
+                        ),
                       Text(style: TextStyle(fontSize: 35, fontFamily: "Cormorant SC"), "Link para o site e rede social"),
 
-                      Text(style: TextStyle(fontSize: 22, fontFamily: "Caudex"), "Site:  https://disneyanimation.com"),
+                      TextButton(
+                        onPressed:() => _launchURL(linkSite),
+                        child: Text(style: TextStyle(fontSize: 22, fontFamily: "Caudex"), "Site:  https://disneyanimation.com"),
+                      ),
 
                       Row(
                         children: [
-                          Image.asset("assets/bela_fera_sobre/logo_instagram.png"),
-                          Text(style: TextStyle(fontFamily: "Caudex", fontSize: 22),"   Disneyanimation")
+                          IconButton(onPressed: () => _launchURL(linkSocial), 
+                          icon:Image.asset("assets/bela_fera_sobre/logo_instagram.png"), ),
+                          
+                          TextButton(
+                            onPressed: () => _launchURL(linkSocial),
+                            child: Text(style: TextStyle(fontFamily: "Caudex", fontSize: 22,),"   Disneyanimation")
+                          )
                         ],
                       ),
                     ],
-                ),            
+                ),
               )
               ],
             )  

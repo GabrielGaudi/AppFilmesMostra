@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_staggered_grid_view: ^0.7.0
+  url_launcher: ^6.3.2
 
 dev_dependencies:
   flutter_test:
@@ -19,11 +20,17 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - assets/liked_songs.json
     - assets/
+    - assets/galeria.json
+    - assets/imagens_principal/
     - assets/cartazes/
     - assets/galeria/
     - assets/referencias/
     - assets/bela_fera_sobre/
+    - assets/tst.json
+
+
 
   fonts:
     - family: Girassol

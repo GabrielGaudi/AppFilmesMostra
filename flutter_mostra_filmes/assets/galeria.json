@@ -1,0 +1,40 @@
+{
+"Personagens":[
+        {
+            "nome": "Bela",
+            "imagem": "assets/bela_fera_sobre/bela_elenco.png"
+        },
+        {
+            "nome": "Fera",
+            "imagem": "assets/bela_fera_sobre/fera_elenco.png"
+        },
+        {
+            "nome": "Gaston",
+            "imagem": "assets/bela_fera_sobre/gaston_elenco.png" 
+        },
+        {
+            "nome": "Maurice",
+            "imagem": "assets/bela_fera_sobre/maurice_elenco.png" 
+        },
+        {
+            "nome": "LeFou",
+            "imagem": "assets/bela_fera_sobre/lefou_elenco.png"
+        },
+        {
+            "nome": "Lumière",
+            "imagem": "assets/bela_fera_sobre/lumiere_elenco.png"
+        },
+        {
+            "nome": "Relógio",
+            "imagem": "assets/bela_fera_sobre/relogio_elenco.png "
+        },
+        {
+            "nome": "Srª Samovar",
+            "imagem": "assets/bela_fera_sobre/sra_samovar_elenco.png "
+        },
+        {
+            "nome": "Chip",
+            "imagem": "assets/bela_fera_sobre/chip_elenco.png "
+        }
+    ]
+}

@@ -46,6 +46,7 @@ class MenuFilmesPagina extends StatelessWidget {
         interactive: true,
         trackVisibility: true,
         child: GridView.count(
+          controller: controleBarra,
             crossAxisSpacing: 10,
             crossAxisCount: 2,
           children: [
