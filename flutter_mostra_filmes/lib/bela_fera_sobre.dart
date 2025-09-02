@@ -7,15 +7,26 @@ import 'galeria_info.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
 
+
 void main(){
   runApp(const BelaFeraSobre());
 }
 
 
 
-class BelaFeraSobre extends StatelessWidget {
+
+
+class BelaFeraSobre extends StatefulWidget {
   const BelaFeraSobre({super.key});
 
+  @override
+  BelaFera createState() => BelaFera();
+
+}
+
+class BelaFera extends State<BelaFeraSobre>{
+
+List<Elenco> musicas = List.empty();
 
   Future<void> _launchURL(Uri url) async {
 
@@ -38,16 +49,32 @@ class BelaFeraSobre extends StatelessWidget {
     }
   }
 
+   Future<void> readJson() async {
+    final response = await rootBundle.loadString('galeria.json');
+     Iterable data = await json.decode(response);
+    List<Elenco> musicas =  List<Elenco>.from(data.map((model)=> Elenco.pegarJson(model)));
+    int total = musicas.length;
+
+  }
+
+
+@override
+initState(){
+  super.initState();
+  readJson();
+}
 
   @override
   Widget build(BuildContext context) {
     final ScrollController controleBarra = ScrollController();
+final String link = '[{"nome": "Bela","imagem": "assets/bela_fera_sobre/bela_elenco.png"},{"nome": "Fera","imagem": "assets/bela_fera_sobre/fera_elenco.png"},{"nome": "Gaston","imagem": "assets/bela_fera_sobre/gaston_elenco.png"},{"nome": "Maurice","imagem": "assets/bela_fera_sobre/maurice_elenco.png"},{"nome": "LeFou","imagem": "assets/bela_fera_sobre/lefou_elenco.png"},{"nome": "Lumière","imagem": "assets/bela_fera_sobre/lumiere_elenco.png"},{"nome": "Relógio","imagem": "assets/bela_fera_sobre/relogio_elenco.png"},{"nome": "Srª Samovar","imagem": "assets/bela_fera_sobre/sra_samovar_elenco.png"},{"nome": "Chip","imagem": "assets/bela_fera_sobre/chip_elenco.png "}]';
+/*final elencoMapa = json.decode(link);
+final sla = Elenco.pegarJson(elencoMapa);
+List<Elenco> membros =  List<Elenco>.from(elencoMapa.map((model)=> Elenco.pegarJson(model)));
+final int total = membros.length;
+final String eba = total.toString();*/
 
-final elencoMapa = jsonDecode('assets/liked_songs.json');
-//final sla = Elenco.pegarJson(elencoMapa);
-//List<Elenco> membros =  List<Elenco>.from(elencoMapa.map((model)=> Elenco.pegarJson(model)));
-//final int total = membros.length;
-//final String eba = total.toString();
+
 
 final List<Map<String, String>> elenco = [
       {'imagem': 'assets/bela_fera_sobre/bela_elenco.png', 'nome': 'Bela'},
@@ -158,25 +185,26 @@ final Uri linkSocial = Uri.parse('https://www.instagram.com/disneyanimation');
               Text(style: TextStyle(fontFamily: "Cormorant SC", fontSize: 35.0), "Elenco/ Personagens"),
 
               GridView.builder(
+
                 primary: false,
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,
                 itemCount: 2,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 1/1.1), 
                 itemBuilder: (context, count){
-                  final item = elenco[count];
+                  final item = musicas[count];
                   return Column(
 
                     children: [
                       Align(
                         alignment: Alignment.center,
-                        child: Image.asset(item['imagem']!, width: 149,
+                        child: Image.asset(item.linkImagem, width: 149,
                       ),
                       ),
 
                       Align(
                         alignment: Alignment.center,
-                        child: Text(item['nome']!, style: TextStyle(fontFamily: "Caudex", fontSize: 22), 
+                        child: Text(item.nomePersonagem, style: TextStyle(fontFamily: "Caudex", fontSize: 22), 
                       ),
                       ),
                       
