@@ -7,7 +7,6 @@ import 'galeria_info.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
 
-
 void main(){
   runApp(const BelaFeraSobre());
 }
@@ -25,13 +24,20 @@ class BelaFeraSobre extends StatefulWidget {
 }
 
 class BelaFera extends State<BelaFeraSobre>{
+ // ignore: unused_field
+List<Elenco> elenco = List.empty();
 
 
+ Future<void> readJson() async {
+    final String response = await rootBundle.loadString('assets/galeria.json');
+    Iterable data = await json.decode(response);
+    elenco =  List<Elenco>.from(data.map((model)=> Elenco.pegarJson(model)));
 
-/*final userMap = jsonDecode('assets/galeria.json') as Map<String, dynamic>;
-final user = Elenco.pegarJson(userMap);*/
+    setState(() {
+      elenco;
 
-late Elenco musicas;
+    });
+  }
 
   Future<void> _launchURL(Uri url) async {
 
@@ -54,35 +60,21 @@ late Elenco musicas;
     }
   }
 
-    Future<void> readJson() async{
-    final response = async rootBundle.loadString('assets/galeria.json');
-    final data = await json.decode(response) as Map<String, dynamic>;
-    musicas = await Elenco.pegarJson(data);
-    //List<String> musicas =  List<String>.from(data.map((model)=> Elenco.pegarJson(model)));
-    //int total = musicas.;
 
-  }
+  @override
+   initState()  {
+    super.initState();
+       readJson();
 
-
-@override
-initState(){
-  super.initState();
-  await readJson();
-}
+    }
 
   @override
   Widget build(BuildContext context) {
     final ScrollController controleBarra = ScrollController();
-final String link = '[{"nome": "Bela","imagem": "assets/bela_fera_sobre/bela_elenco.png"},{"nome": "Fera","imagem": "assets/bela_fera_sobre/fera_elenco.png"},{"nome": "Gaston","imagem": "assets/bela_fera_sobre/gaston_elenco.png"},{"nome": "Maurice","imagem": "assets/bela_fera_sobre/maurice_elenco.png"},{"nome": "LeFou","imagem": "assets/bela_fera_sobre/lefou_elenco.png"},{"nome": "Lumière","imagem": "assets/bela_fera_sobre/lumiere_elenco.png"},{"nome": "Relógio","imagem": "assets/bela_fera_sobre/relogio_elenco.png"},{"nome": "Srª Samovar","imagem": "assets/bela_fera_sobre/sra_samovar_elenco.png"},{"nome": "Chip","imagem": "assets/bela_fera_sobre/chip_elenco.png "}]';
-/*final elencoMapa = json.decode(link);
-final sla = Elenco.pegarJson(elencoMapa);
-List<Elenco> membros =  List<Elenco>.from(elencoMapa.map((model)=> Elenco.pegarJson(model)));
-final int total = membros.length;
-final String eba = total.toString();*/
 
 
 
-final List<Map<String, String>> elenco = [
+final List<Map<String, String>> pessoas = [
       {'imagem': 'assets/bela_fera_sobre/bela_elenco.png', 'nome': 'Bela'},
       {'imagem': 'assets/bela_fera_sobre/fera_elenco.png', 'nome': 'Fera'},
       {'imagem': 'assets/bela_fera_sobre/gaston_elenco.png', 'nome': 'Gaston'},
@@ -195,22 +187,22 @@ final Uri linkSocial = Uri.parse('https://www.instagram.com/disneyanimation');
                 primary: false,
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,
-                itemCount: 2,
+                itemCount: elenco.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 1/1.1), 
                 itemBuilder: (context, count){
                   final item = elenco[count];
                   return Column(
-
+                    
                     children: [
                       Align(
                         alignment: Alignment.center,
-                        child: Image.asset(item['imagem']!, width: 149,
+                        child: Image.asset(item.linkImagem, width: 149,
                       ),
                       ),
 
                       Align(
                         alignment: Alignment.center,
-                        child: Text(item['nome']!, style: TextStyle(fontFamily: "Caudex", fontSize: 22), 
+                        child: Text(item.nomePersonagem, style: TextStyle(fontFamily: "Caudex", fontSize: 22), 
                       ),
                       ),
                       
