@@ -1,5 +1,5 @@
-
-[
+{
+    "Personagen":[
         {
             "nome": "Bela",
             "imagem": "assets/bela_fera_sobre/bela_elenco.png"
@@ -37,3 +37,4 @@
             "imagem": "assets/bela_fera_sobre/chip_elenco.png "
         }
     ]
+}

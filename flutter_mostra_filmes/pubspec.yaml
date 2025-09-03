@@ -22,7 +22,7 @@ flutter:
   assets:
     - assets/liked_songs.json
     - assets/galeria.json
-    - galeria.json
+
     - assets/imagens_principal/
     - assets/cartazes/
     - assets/galeria/

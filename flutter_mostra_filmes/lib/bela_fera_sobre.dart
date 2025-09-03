@@ -26,7 +26,12 @@ class BelaFeraSobre extends StatefulWidget {
 
 class BelaFera extends State<BelaFeraSobre>{
 
-List<Elenco> musicas = List.empty();
+
+
+/*final userMap = jsonDecode('assets/galeria.json') as Map<String, dynamic>;
+final user = Elenco.pegarJson(userMap);*/
+
+late Elenco musicas;
 
   Future<void> _launchURL(Uri url) async {
 
@@ -49,11 +54,12 @@ List<Elenco> musicas = List.empty();
     }
   }
 
-   Future<void> readJson() async {
-    final response = await rootBundle.loadString('galeria.json');
-     Iterable data = await json.decode(response);
-    List<Elenco> musicas =  List<Elenco>.from(data.map((model)=> Elenco.pegarJson(model)));
-    int total = musicas.length;
+    Future<void> readJson() async{
+    final response = async rootBundle.loadString('assets/galeria.json');
+    final data = await json.decode(response) as Map<String, dynamic>;
+    musicas = await Elenco.pegarJson(data);
+    //List<String> musicas =  List<String>.from(data.map((model)=> Elenco.pegarJson(model)));
+    //int total = musicas.;
 
   }
 
@@ -61,7 +67,7 @@ List<Elenco> musicas = List.empty();
 @override
 initState(){
   super.initState();
-  readJson();
+  await readJson();
 }
 
   @override
@@ -192,19 +198,19 @@ final Uri linkSocial = Uri.parse('https://www.instagram.com/disneyanimation');
                 itemCount: 2,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 1/1.1), 
                 itemBuilder: (context, count){
-                  final item = musicas[count];
+                  final item = elenco[count];
                   return Column(
 
                     children: [
                       Align(
                         alignment: Alignment.center,
-                        child: Image.asset(item.linkImagem, width: 149,
+                        child: Image.asset(item['imagem']!, width: 149,
                       ),
                       ),
 
                       Align(
                         alignment: Alignment.center,
-                        child: Text(item.nomePersonagem, style: TextStyle(fontFamily: "Caudex", fontSize: 22), 
+                        child: Text(item['nome']!, style: TextStyle(fontFamily: "Caudex", fontSize: 22), 
                       ),
                       ),
                       
