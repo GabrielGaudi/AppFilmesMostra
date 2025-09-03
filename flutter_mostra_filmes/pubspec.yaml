@@ -1,0 +1,45 @@
+name: flutter_mostra_filmes
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_staggered_grid_view: ^0.7.0
+  url_launcher: ^6.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/liked_songs.json
+    - assets/galeria.json
+    - galeria.json
+    - assets/imagens_principal/
+    - assets/cartazes/
+    - assets/galeria/
+    - assets/referencias/
+    - assets/bela_fera_sobre/
+    - assets/tst.json
+
+
+
+  fonts:
+    - family: Girassol
+      fonts:
+        - asset: assets/fonts/girassol_regular.ttf
+    - family: Cormorant SC
+      fonts:
+        - asset: assets/fonts/cormorantsc-semibold.ttf
+    - family: Caudex
+      fonts:
+        - asset: assets/fonts/caudex-regular.ttf
+
