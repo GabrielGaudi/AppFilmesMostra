@@ -7,8 +7,14 @@ void main(){
   runApp(const ReferenciasFilmesPagina());
 }
 
-class ReferenciasFilmesPagina extends StatelessWidget {
+class ReferenciasFilmesPagina extends StatefulWidget {
   const ReferenciasFilmesPagina({super.key});
+
+  @override
+  ReferenciasPg createState() => ReferenciasPg();
+}
+
+class ReferenciasPg extends State<ReferenciasFilmesPagina>{
 
   void _navegacao(BuildContext context, int index) {
     switch(index){

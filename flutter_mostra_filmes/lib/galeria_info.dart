@@ -1,5 +1,3 @@
-// ignore_for_file: unnecessary_this
-
 class Elenco{
   late String nomePersonagem;
   late String linkImagem;

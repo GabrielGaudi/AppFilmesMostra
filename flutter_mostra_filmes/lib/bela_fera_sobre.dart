@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mostra_filmes/links_info.dart';
 import 'package:flutter_mostra_filmes/menu_filmes.dart';
 import 'main.dart';
 import 'referencias.dart';
@@ -24,18 +25,28 @@ class BelaFeraSobre extends StatefulWidget {
 }
 
 class BelaFera extends State<BelaFeraSobre>{
- // ignore: unused_field
+
 List<Elenco> elenco = List.empty();
+List<Links> links = List.empty();
 
 
- Future<void> readJson() async {
+ Future<void> elencoJson() async {
     final String response = await rootBundle.loadString('assets/galeria.json');
     Iterable data = await json.decode(response);
     elenco =  List<Elenco>.from(data.map((model)=> Elenco.pegarJson(model)));
 
     setState(() {
       elenco;
+    });
+  }
 
+  Future<void> linksJson() async {
+    final String linksResponse = await rootBundle.loadString('assets/link.json');
+    Iterable linksData = await json.decode(linksResponse);
+    links = List<Links>.from(linksData.map((model)=> Links.pegarJson(model)));
+
+    setState(() {
+      links;
     });
   }
 
@@ -64,32 +75,19 @@ List<Elenco> elenco = List.empty();
   @override
    initState()  {
     super.initState();
-       readJson();
-
+       elencoJson();
+        linksJson();
     }
 
   @override
   Widget build(BuildContext context) {
     final ScrollController controleBarra = ScrollController();
 
-
-
-final List<Map<String, String>> pessoas = [
-      {'imagem': 'assets/bela_fera_sobre/bela_elenco.png', 'nome': 'Bela'},
-      {'imagem': 'assets/bela_fera_sobre/fera_elenco.png', 'nome': 'Fera'},
-      {'imagem': 'assets/bela_fera_sobre/gaston_elenco.png', 'nome': 'Gaston'},
-      {'imagem': 'assets/bela_fera_sobre/maurice_elenco.png', 'nome': 'Maurice'},
-      {'imagem': 'assets/bela_fera_sobre/lefou_elenco.png', 'nome': 'LeFou'},
-      {'imagem': 'assets/bela_fera_sobre/lumiere_elenco.png', 'nome': 'Lumière'},
-      {'imagem': 'assets/bela_fera_sobre/relogio_elenco.png', 'nome': 'Relógio'},
-      {'imagem': 'assets/bela_fera_sobre/sra_samovar_elenco.png', 'nome': 'Srª Samovar'},
-      {'imagem': 'assets/bela_fera_sobre/chip_elenco.png', 'nome': 'Chip'},
-    ];
     
-final Uri linkTrailer = Uri.parse('https://youtu.be/5pXjJ2fEA5Y?si=FxenAZ79wxX8pgkX');
+/*final Uri linkTrailer = Uri.parse('https://youtu.be/5pXjJ2fEA5Y?si=FxenAZ79wxX8pgkX');
 final Uri linkSite = Uri.parse('https://disneyanimation.com');
 final Uri linkSocial = Uri.parse('https://www.instagram.com/disneyanimation');
-
+*/
      return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -224,24 +222,24 @@ final Uri linkSocial = Uri.parse('https://www.instagram.com/disneyanimation');
                       
                       Text(style: TextStyle(fontSize: 35, fontFamily: "Cormorant SC"), "Link para trailer"),
                       TextButton(
-                        onPressed:() => _launchURL(linkTrailer),
+                        onPressed:() => _launchURL(links[0].trailer),
                         child: Text(style: TextStyle(fontSize: 22, fontFamily: "Caudex"), "https://youtu.be/5pXjJ2fEA5Y?si=FxenAZ79wxX8pgkX"),
                         
                         ),
                       Text(style: TextStyle(fontSize: 35, fontFamily: "Cormorant SC"), "Link para o site e rede social"),
 
                       TextButton(
-                        onPressed:() => _launchURL(linkSite),
+                        onPressed:() => _launchURL(links[0].site),
                         child: Text(style: TextStyle(fontSize: 22, fontFamily: "Caudex"), "Site:  https://disneyanimation.com"),
                       ),
 
                       Row(
                         children: [
-                          IconButton(onPressed: () => _launchURL(linkSocial), 
+                          IconButton(onPressed: () => _launchURL(links[0].social), 
                           icon:Image.asset("assets/bela_fera_sobre/logo_instagram.png"), ),
                           
                           TextButton(
-                            onPressed: () => _launchURL(linkSocial),
+                            onPressed: () => _launchURL(links[0].social),
                             child: Text(style: TextStyle(fontFamily: "Caudex", fontSize: 22,),"   Disneyanimation")
                           )
                         ],
