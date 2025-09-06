@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mostra_filmes/links_info.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart';
+
 import 'package:flutter_mostra_filmes/menu_filmes.dart';
 import 'main.dart';
 import 'referencias.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'galeria_info.dart';
-import 'dart:convert';
-import 'package:flutter/services.dart';
+
+import 'classes_json.dart';
+
 
 void main(){
   runApp(const BelaFeraSobre());
 }
-
-
-
 
 
 class BelaFeraSobre extends StatefulWidget {
@@ -28,7 +27,7 @@ class BelaFera extends State<BelaFeraSobre>{
 
 List<Elenco> elenco = List.empty();
 List<Links> links = List.empty();
-
+List<Sobre> informacoes = List.empty();
 
  Future<void> elencoJson() async {
     final String response = await rootBundle.loadString('assets/galeria.json');
@@ -41,12 +40,22 @@ List<Links> links = List.empty();
   }
 
   Future<void> linksJson() async {
-    final String linksResponse = await rootBundle.loadString('assets/link.json');
-    Iterable linksData = await json.decode(linksResponse);
-    links = List<Links>.from(linksData.map((model)=> Links.pegarJson(model)));
+    final String response = await rootBundle.loadString('assets/link.json');
+    Iterable data = await json.decode(response);
+    links = List<Links>.from(data.map((model)=> Links.pegarJson(model)));
 
     setState(() {
       links;
+    });
+  }
+
+    Future<void> sobreFilmeJson() async {
+    final String response = await rootBundle.loadString('assets/bela_fera_sobre.json');
+    Iterable data = await json.decode(response);
+    informacoes = List<Sobre>.from(data.map((model)=> Sobre.pegarJson(model)));
+
+    setState(() {
+      informacoes;
     });
   }
 
@@ -72,22 +81,19 @@ List<Links> links = List.empty();
   }
 
 
+
   @override
    initState()  {
     super.initState();
        elencoJson();
         linksJson();
+        sobreFilmeJson();
     }
 
   @override
   Widget build(BuildContext context) {
     final ScrollController controleBarra = ScrollController();
 
-    
-/*final Uri linkTrailer = Uri.parse('https://youtu.be/5pXjJ2fEA5Y?si=FxenAZ79wxX8pgkX');
-final Uri linkSite = Uri.parse('https://disneyanimation.com');
-final Uri linkSocial = Uri.parse('https://www.instagram.com/disneyanimation');
-*/
      return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -119,13 +125,13 @@ final Uri linkSocial = Uri.parse('https://www.instagram.com/disneyanimation');
                   
                   widthFactor: 4.2,
                   alignment: Alignment.topLeft,
-                  child: Text(style: TextStyle(fontFamily: "Cormorant SC", fontSize: 35.0), "a"),
+                  child: Text(style: TextStyle(fontFamily: "Cormorant SC", fontSize: 35.0), "Sinopse"),
                 
               ),
-              Text(style: TextStyle(fontFamily: "Caudex", fontSize: 20.0,), "   Moradora de uma pequena aldeia francesa, Bela tem o pai capturado pela Fera e decide entregar sua vida ao estranho ser em troca da liberdade do progenitor. No castelo, ela conhece objetos mágicos e descobre que a Fera é na verdade um príncipe que precisa de amor para voltar à forma humana."),
+              Text(style: TextStyle(fontFamily: "Caudex", fontSize: 20.0,), informacoes[0].sinopse),
               Align(
                 alignment: Alignment.centerLeft,
-                child: Text(style: TextStyle(fontFamily: "Caudex", fontSize: 20.0, fontStyle: FontStyle.italic, ), "gênero: Romance", textAlign: TextAlign.right,),
+                child: Text(style: TextStyle(fontFamily: "Caudex", fontSize: 20.0, fontStyle: FontStyle.italic, ), informacoes[0].genero, textAlign: TextAlign.right,),
               ),
               Align(
                 alignment: Alignment.centerLeft,
@@ -140,13 +146,13 @@ final Uri linkSocial = Uri.parse('https://www.instagram.com/disneyanimation');
                   Image.asset("assets/bela_fera_sobre/diretor_gary.png", width: 260,),
 
                   Padding(padding: EdgeInsets.symmetric(vertical: 50),
-                  child: Text(style: TextStyle(fontFamily: "Caudex", fontSize: 20),  "Gary Trousdale é um cineasta estadunidense, atuando na direção e produção de muitas animações da Disney."),
+                  child: Text(style: TextStyle(fontFamily: "Caudex", fontSize: 20), informacoes[0].diretor1),
                   ),
 
                   Image.asset("assets/bela_fera_sobre/diretor_kirk.png", width: 260,),
                   
                   Padding(padding: EdgeInsets.fromLTRB(10, 45, 10, 45),
-                  child: Text(style: TextStyle(fontFamily: "Caudex", fontSize: 20), "Kirk Wise é um cineasta estadunidense que, ao lado de Gary Trousdale, dirige e coordena a produção de boa parte das animações da Disney."),
+                  child: Text(style: TextStyle(fontFamily: "Caudex", fontSize: 20), informacoes[0].diretor2),
                   )
                 ],),
 
@@ -166,7 +172,7 @@ final Uri linkSocial = Uri.parse('https://www.instagram.com/disneyanimation');
                     child: Text(style: TextStyle(fontFamily: "Cormorant SC", fontSize: 35.0,), "Empresa/Studio", textAlign: TextAlign.right,),
                   ),
                   Image.asset("assets/bela_fera_sobre/disney_logo.png"),
-                  Text(style: TextStyle(fontFamily: "Caudex", fontSize: 20.0, ), "O Walt Disney Animation Studios é um estúdio de animação dirigido por cineastas, responsável pela criação de alguns dos filmes mais amados já feitos. Localizada em Burbank e Vancouver, a Disney Animation continua a desenvolver seu rico legado de inovação e criatividade, desde o primeiro longa-metragem totalmente animado - Branca de Neve e os Sete Anões, de 1937 - até Zootopia 2, de 2025.")
+                  Text(style: TextStyle(fontFamily: "Caudex", fontSize: 20.0, ), informacoes[0].empresa)
                 ],
               ),
 
@@ -175,7 +181,7 @@ final Uri linkSocial = Uri.parse('https://www.instagram.com/disneyanimation');
                 spacing: 20.0,
                 children: [
                   Text(style: TextStyle(fontFamily: "Cormorant SC", fontSize: 35.0),"Dados de lançamento"),
-                  Text(style: TextStyle(fontFamily: "Caudex", fontSize: 20.0),"Uma versão inacabada de A Bela e a Fera estreou no Festival de cinema de Nova York em 29 de setembro de 1991, antes de seu amplo lançamento em 22 de novembro de 1991. No Brasil o lançamento ocorreu no dia 13 de dezembro de 1991.")
+                  Text(style: TextStyle(fontFamily: "Caudex", fontSize: 20.0), informacoes[0].lancamento)
                 ],
               ),
               Text(style: TextStyle(fontFamily: "Cormorant SC", fontSize: 35.0), "Elenco/ Personagens"),

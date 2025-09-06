@@ -22,6 +22,7 @@ flutter:
   assets:
     - assets/galeria.json
     - assets/link.json
+    - assets/bela_fera_sobre.json
     - assets/imagens_principal/
     - assets/cartazes/
     - assets/galeria/
