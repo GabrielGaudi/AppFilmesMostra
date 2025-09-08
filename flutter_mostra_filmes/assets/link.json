@@ -4,4 +4,24 @@
         "Site": "https://disneyanimation.com",
         "Rede Social": "https://www.instagram.com/disneyanimation"
     }
+    {
+        "Trailer": "https://www.youtube.com/watch?v=veszTagaXik",
+        "Site": "https://www.sonypictures.com/movies/jumanji",
+        "Rede Social": "https://www.instagram.com/sony/"
+    }
+    {
+        "Trailer": "https://www.youtube.com/watch?v=cVKkL4O60IM",
+        "Site": "https://www.harrypotter.com/",
+        "Rede Social": "https://www.instagram.com/harrypotter/"
+    }
+    {
+        "Trailer": "https://www.youtube.com/watch?v=4wli3p-giak",
+        "Site": "https://globoplay.globo.com/v/3501828/",
+        "Rede Social": ""
+    }
+    {
+        "Trailer": "https://www.youtube.com/watch?v=Oo9R1neW4lw",
+        "Site": "",
+        "Rede Social": ""   
+    }
 ]
