@@ -58,7 +58,7 @@ class GaleriaPagina extends StatelessWidget {
             itemBuilder: (context, imgNumber) => Padding(
               
               padding: const EdgeInsets.all(7.0),
-              child: Image.asset("assets/galeria/bela_fera_galeria${imgNumber + 1}.png"),
+              child: Image.asset("assets/galeria_bela/bela_fera_galeria${imgNumber + 1}.png"),
               ),
            ),
 

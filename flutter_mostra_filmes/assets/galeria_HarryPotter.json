@@ -1,0 +1,52 @@
+[
+{
+    "Nome":"Harry Potter",
+    "imagem":"assets"
+},
+
+{
+    "Nome":"Lord Voldemort",
+    "imagem":"assets"
+},
+
+{
+    "Nome":"Hermione Granger",
+    "imagem":"assets"
+},
+
+{
+    "Nome":"Albus Dumbledore",
+    "imagem":"assets"
+},
+
+{
+    "Nome":"Rúbeo Hagrid",
+    "imagem":"assets"
+},
+
+{
+    "Nome":"Severus Snape",
+    "imagem":"assets"
+},
+
+{
+    "Nome":"Ron Weasley",
+    "imagem":"assets"
+},
+
+{
+    "Nome":"Draco Malfoy",
+    "imagem":"assets"
+},
+
+{
+    "Nome":"Quirino Quirrell",
+    "imagem":"assets"
+},
+
+{
+    "Nome":"Minerva",
+    "imagem":"assets"
+}
+
+]

@@ -1,10 +1,23 @@
-[
-    {
-        "Sinopse": "   Moradora de uma pequena aldeia francesa, Bela tem o pai capturado pela Fera e decide entregar sua vida ao estranho ser em troca da liberdade do progenitor. No castelo, ela conhece objetos mágicos e descobre que a Fera é na verdade um príncipe que precisa de amor para voltar à forma humana.",
-        "Genero": "Romance",
-        "Diretor1": "Gary Trousdale é um cineasta estadunidense, atuando na direção e produção de muitas animações da Disney.",
-        "Diretor2": "Kirk Wise é um cineasta estadunidense que, ao lado de Gary Trousdale, dirige e coordena a produção de boa parte das animações da Disney.",
-        "Empresa": "O Walt Disney Animation Studios é um estúdio de animação dirigido por cineastas, responsável pela criação de alguns dos filmes mais amados já feitos. Localizada em Burbank e Vancouver, a Disney Animation continua a desenvolver seu rico legado de inovação e criatividade, desde o primeiro longa-metragem totalmente animado - Branca de Neve e os Sete Anões, de 1937 - até Zootopia 2, de 2025.",
-        "Lancamento": "Uma versão inacabada de A Bela e a Fera estreou no Festival de cinema de Nova York em 29 de setembro de 1991, antes de seu amplo lançamento em 22 de novembro de 1991. No Brasil o lançamento ocorreu no dia 13 de dezembro de 1991."
-    }
-]
+
+[{
+    
+"Sinopse": "Moradora de uma pequena aldeia francesa, Bela tem o pai capturado pela Fera e decide entregar sua vida ao estranho ser em troca da liberdade do progenitor. No castelo, ela conhece objetos mágicos e descobre que a Fera é na verdade um príncipe que precisa de amor para voltar à forma humana.",
+
+"Gênero":"Gênero Romance",
+
+
+"Diretor1":"Gary Trousdale é um cineasta estadunidense, atuando na direção e produção de muitas animações da Disney.",
+
+
+"Diretor2":"Kirk Wise é um cineasta estadunidense que, ao lado de Gary Trousdale, dirige e coordena a produção de boa parte das animações da Disney.",
+
+"Empresa/Studio":"O Walt Disney Animation Studios é um estúdio de animação dirigido por cineastas, responsável pela criação de alguns dos filmes mais amados já feitos. Localizada em Burbank e Vancouver, a Disney Animation continua a desenvolver seu rico legado de inovação e criatividade, desde o primeiro longa-metragem totalmente animado - Branca de Neve e os Sete Anões, de 1937 - até Zootopia 2, de 2025.",
+    
+"Dados de lançamento":"Uma versão inacabada de A Bela e a Fera estreou no Festival de cinema de Nova York em 29 de setembro de 1991, antes de seu amplo lançamento em 22 de novembro de 1991. No Brasil o lançamento ocorreu no dia 13 de dezembro de 1991.",
+
+    
+"Trailer": "https://youtu.be/5pXjJ2fEA5Y?si=FxenAZ79wxX8pgkX",
+"Site": "https://disneyanimation.com",
+"Rede Social": "https://www.instagram.com/disneyanimation"
+    
+}]

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mostra_filmes/bela_fera_sobre.dart';
+import 'package:flutter_mostra_filmes/harry_potter_sobre.dart';
+import 'package:flutter_mostra_filmes/jumanji.dart';
+import 'package:flutter_mostra_filmes/poetas_mortos_sobre.dart';
 import 'main.dart';
 import 'referencias.dart';
-
+import 'estomago_sobre.dart';
 
 void main(){
   runApp(const MenuFilmesPagina());
@@ -57,10 +60,34 @@ class MenuFilmesPagina extends StatelessWidget {
                 (context) => const BelaFeraSobre()),
               );},
             ),
-            IconButton(icon: Image.asset("assets/cartazes/jumanji_cartaz.png"), onPressed: (){},),
-            IconButton(icon: Image.asset("assets/cartazes/harry_cartaz.png"), onPressed: (){},),
-            IconButton(icon: Image.asset("assets/cartazes/estomago_cartaz.png"), onPressed: (){},),
-            IconButton(icon: Image.asset("assets/cartazes/sociedade_poetas_cartaz.png"), onPressed: (){},),
+            IconButton(icon: Image.asset("assets/cartazes/jumanji_cartaz.png"), onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder:
+                (context) => const JumanjiSobre()),
+              );
+            },),
+            IconButton(icon: Image.asset("assets/cartazes/harry_cartaz.png"), onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder:
+                (context) => const HarryPotterSobre()),
+              );
+            },),
+            IconButton(icon: Image.asset("assets/cartazes/estomago_cartaz.png"), onPressed: (){
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: 
+                (context) => const EstomagoSobre()),
+              );
+            },),
+            IconButton(icon: Image.asset("assets/cartazes/sociedade_poetas_cartaz.png"), onPressed: (){
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: 
+                (context) => const PoetasMortosSobre()),
+              );
+            },),
           ],
         ),
       ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'menu_filmes.dart';
 import 'referencias.dart';
 import 'galeria.dart';
+import 'estomago_sobre.dart';
 
 
 void main() {
@@ -54,7 +55,7 @@ class InicioPagina extends StatelessWidget {
             IconButton(icon: Image.asset("assets/imagens_principal/bela_fera_principal.png"), onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => const GaleriaPagina()));},),
             IconButton(icon: Image.asset("assets/imagens_principal/jumanji_principal.png"), onPressed: (){},),
             IconButton(icon: Image.asset("assets/imagens_principal/harry_principal.png"), onPressed: (){},),
-            IconButton(icon: Image.asset("assets/imagens_principal/estomago_principal.png"), onPressed: (){},),
+            IconButton(icon: Image.asset("assets/imagens_principal/estomago_principal.png"), onPressed: (){ },),
             IconButton(icon: Image.asset("assets/imagens_principal/sociedade_poetas_principal.png"), onPressed: (){},),
           ],
         ),

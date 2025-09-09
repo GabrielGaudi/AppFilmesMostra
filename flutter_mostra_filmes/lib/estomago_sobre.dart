@@ -11,25 +11,25 @@ import 'classes_json.dart';
 
 
 void main(){
-  runApp(const BelaFeraSobre());
+  runApp(const EstomagoSobre());
 }
 
 
-class BelaFeraSobre extends StatefulWidget {
-  const BelaFeraSobre({super.key});
+class EstomagoSobre extends StatefulWidget {
+  const EstomagoSobre({super.key});
 
   @override
-  BelaFera createState() => BelaFera();
+  Estomago createState() => Estomago();
 
 }
 
-class BelaFera extends State<BelaFeraSobre>{
+class Estomago extends State<EstomagoSobre>{
 
 List<Elenco> elenco = List.empty();
 List<Sobre> informacoes = List.empty();
 
  Future<void> elencoJson() async {
-    final String response = await rootBundle.loadString('assets/galeria_bela.json');
+    final String response = await rootBundle.loadString('assets/galeria_estomago.json');
     Iterable data = await json.decode(response);
     elenco =  List<Elenco>.from(data.map((model)=> Elenco.pegarJson(model)));
 
@@ -40,7 +40,7 @@ List<Sobre> informacoes = List.empty();
 
 
     Future<void> sobreFilmeJson() async {
-    final String response = await rootBundle.loadString('assets/bela_fera_sobre.json');
+    final String response = await rootBundle.loadString('assets/estomago.json');
     Iterable data = await json.decode(response);
     informacoes = List<Sobre>.from(data.map((model)=> Sobre.pegarJson(model)));
 
@@ -109,7 +109,7 @@ List<Sobre> informacoes = List.empty();
               
               spacing: 20.0,
               children: [
-              Image.asset("assets/cartazes/bela_fera_cartaz.png", height: 300,),
+              Image.asset("assets/cartazes/estomago_cartaz.png", height: 300,),
                 Align(
                   
                   widthFactor: 4.2,
@@ -132,17 +132,11 @@ List<Sobre> informacoes = List.empty();
               shrinkWrap: true,
 
                 children: [
-                  Image.asset("assets/bela_fera_sobre/diretor_gary.png", width: 260,),
+                  Image.asset("assets/estomago_sobre/diretor_estomago.png", width: 260,),
 
                   Padding(padding: EdgeInsets.symmetric(vertical: 50),
                   child: Text(style: TextStyle(fontFamily: "Caudex", fontSize: 20), informacoes[0].diretor1),
                   ),
-
-                  Image.asset("assets/bela_fera_sobre/diretor_kirk.png", width: 260,),
-                  
-                  Padding(padding: EdgeInsets.fromLTRB(10, 45, 10, 45),
-                  child: Text(style: TextStyle(fontFamily: "Caudex", fontSize: 20), informacoes[0].diretor2),
-                  )
                 ],),
 
               Row(
@@ -160,7 +154,7 @@ List<Sobre> informacoes = List.empty();
                     alignment: Alignment.centerLeft,
                     child: Text(style: TextStyle(fontFamily: "Cormorant SC", fontSize: 35.0,), "Empresa/Studio", textAlign: TextAlign.right,),
                   ),
-                  Image.asset("assets/bela_fera_sobre/disney_logo.png"),
+                  Image.asset("assets/estomago_sobre/empresa_estomago.jpg"),
                   Text(style: TextStyle(fontFamily: "Caudex", fontSize: 20.0, ), informacoes[0].empresa)
                 ],
               ),
@@ -187,11 +181,11 @@ List<Sobre> informacoes = List.empty();
                   return Column(
                     
                     children: [
-                      Align(
+                      /*Align(
                         alignment: Alignment.center,
                         child: Image.asset(item.linkImagem, width: 149,
                       ),
-                      ),
+                      ),*/
 
                       Align(
                         alignment: Alignment.center,
@@ -218,14 +212,14 @@ List<Sobre> informacoes = List.empty();
                       Text(style: TextStyle(fontSize: 35, fontFamily: "Cormorant SC"), "Link para trailer"),
                       TextButton(
                         onPressed:() => _launchURL(informacoes[0].trailer),
-                        child: Text(style: TextStyle(fontSize: 22, fontFamily: "Caudex"), "https://youtu.be/5pXjJ2fEA5Y?si=FxenAZ79wxX8pgkX"),
+                        child: Text(style: TextStyle(fontSize: 22, fontFamily: "Caudex"), informacoes[0].trailer.toString()),
                         
                         ),
                       Text(style: TextStyle(fontSize: 35, fontFamily: "Cormorant SC"), "Link para o site e rede social"),
 
                       TextButton(
                         onPressed:() => _launchURL(informacoes[0].site),
-                        child: Text(style: TextStyle(fontSize: 22, fontFamily: "Caudex"), "Site:  https://disneyanimation.com"),
+                        child: Text(style: TextStyle(fontSize: 22, fontFamily: "Caudex"), informacoes[0].site.toString() ),
                       ),
 
                       Row(
@@ -235,7 +229,7 @@ List<Sobre> informacoes = List.empty();
                           
                           TextButton(
                             onPressed: () => _launchURL(informacoes[0].social),
-                            child: Text(style: TextStyle(fontFamily: "Caudex", fontSize: 22,),"   Disneyanimation")
+                            child: Text(style: TextStyle(fontFamily: "Caudex", fontSize: 22,),"   ZencraneFilmes")
                           )
                         ],
                       ),

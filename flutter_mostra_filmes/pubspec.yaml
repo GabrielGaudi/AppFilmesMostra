@@ -20,15 +20,32 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/galeria.json
-    - assets/link.json
+    
+    - assets/arquivosJSON/belaEaFera.json
+    - assets/galeria_bela.json
     - assets/bela_fera_sobre.json
+    - assets/estomago.json
+    - assets/galeria_estomago.json
+    - assets/HarryPotter.json
+    - assets/galeria_HarryPotter.json
+    - assets/Jumanji.json
+    - assets/galeria_jumanji.json
+    - assets/sociedade_poetas_mortos.json
+    - assets/galeria_poetas.json
+
     - assets/imagens_principal/
     - assets/cartazes/
-    - assets/galeria/
+
+    - assets/galeria_bela/
     - assets/referencias/
     - assets/bela_fera_sobre/
+    - assets/estomago_sobre/
+    - assets/jumanji_sobre/
+    - assets/harry_potter_sobre/
+    - assets/sociedade_poetas_mortos_sobre/
+    - assets/galeria_estomago.json
 
+    
 
   fonts:
     - family: Girassol
