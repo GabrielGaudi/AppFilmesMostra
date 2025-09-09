@@ -3,6 +3,7 @@
 ## Feito por:
 Gabriel Gaudí Pozzi
 Susana Garcia
+Vitória Colussi dos Santos
 <br>
 
 Documentação e protótipo de alto nível de um aplicativo mobile para Android feito com a plataforma Flutter, sobre os filmes usados como inspiração para o jogo da mostra cultural.
