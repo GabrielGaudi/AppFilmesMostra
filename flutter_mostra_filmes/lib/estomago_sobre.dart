@@ -181,11 +181,11 @@ List<Sobre> informacoes = List.empty();
                   return Column(
                     
                     children: [
-                      /*Align(
+                      Align(
                         alignment: Alignment.center,
                         child: Image.asset(item.linkImagem, width: 149,
                       ),
-                      ),*/
+                      ),
 
                       Align(
                         alignment: Alignment.center,

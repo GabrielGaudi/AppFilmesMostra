@@ -1,47 +1,38 @@
 [
     {
         "Nome":"Raimundo nonato",
-        "imagem":"assets"
+        "Imagem":"assets/estomago"
     },
-
     {
         "Nome":"Zulmiro",
-        "imagem":"assets"
+        "Imagem":"assetsa"
     },
-
     {
         "Nome":"Etcétera",
-        "imagem":"assets"
+        "Imagem":"assetsb"
     },
-
     {
         "Nome":"Bujiú",
-        "imagem":"assets"
+        "Imagem":"assetsv"
     },
-
     {
         "Nome":"Íria",
-        "imagem":"assets"
+        "Imagem":"assetsc"
     },
-
     {
         "Nome":"Valtão",
-        "imagem":"assets"
+        "Imagem":"assetsf"
     },
-
     {
         "Nome":"Vagnão",
-        "imagem":"assets"
+        "Imagem":"assetso"
     },
-
     {
         "Nome":"Boquenga",
-        "imagem":"assets"
+        "Imagem":"assetsz"
     },
-
     {
         "Nome":"Magrão",
-        "imagem":"assets"
+        "Imagem":"assetsp"
     }
-
 ]

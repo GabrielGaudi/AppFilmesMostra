@@ -26,7 +26,7 @@ class Poetas extends State<PoetasMortosSobre> {
 
   Future<void> elencoJson() async {
     final String response = await rootBundle.loadString(
-      'assets/galeria_bela.json',
+      'assets/galeria_Poetas.json',
     );
     Iterable data = await json.decode(response);
     elenco = List<Elenco>.from(data.map((model) => Elenco.pegarJson(model)));

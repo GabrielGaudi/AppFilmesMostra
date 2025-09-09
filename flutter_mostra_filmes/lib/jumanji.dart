@@ -29,7 +29,7 @@ List<Elenco> elenco = List.empty();
 List<Sobre> informacoes = List.empty();
 
  Future<void> elencoJson() async {
-    final String response = await rootBundle.loadString('assets/galeria_bela.json');
+    final String response = await rootBundle.loadString('assets/galeria_jumanji.json');
     Iterable data = await json.decode(response);
     elenco =  List<Elenco>.from(data.map((model)=> Elenco.pegarJson(model)));
 
