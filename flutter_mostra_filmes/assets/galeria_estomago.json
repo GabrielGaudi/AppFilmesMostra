@@ -1,38 +1,38 @@
 [
     {
         "Nome":"Raimundo nonato",
-        "Imagem":"assets/estomago"
+        "Imagem":"assets/estomago_sobre/raimundo_nonato.jpg"
     },
     {
         "Nome":"Zulmiro",
-        "Imagem":"assetsa"
+        "Imagem":"assets/estomago_sobre/zulmiro.png"
     },
     {
         "Nome":"Etcétera",
-        "Imagem":"assetsb"
+        "Imagem":"assets/estomago_sobre/etc.jpg"
     },
     {
         "Nome":"Bujiú",
-        "Imagem":"assetsv"
+        "Imagem":"assets/estomago_sobre/buijiu.jpg"
     },
     {
         "Nome":"Íria",
-        "Imagem":"assetsc"
+        "Imagem":"assets/estomago_sobre/iria.jpg"
     },
     {
         "Nome":"Valtão",
-        "Imagem":"assetsf"
+        "Imagem":"assets/estomago_sobre/valtao.jpg"
     },
     {
         "Nome":"Vagnão",
-        "Imagem":"assetso"
+        "Imagem":"assets/estomago_sobre/vagnao.jpg"
     },
     {
         "Nome":"Boquenga",
-        "Imagem":"assetsz"
+        "Imagem":"assets/estomago_sobre/boquenga.jpeg"
     },
     {
         "Nome":"Magrão",
-        "Imagem":"assetsp"
+        "Imagem":"assets/estomago_sobre/magrao.jpg"
     }
 ]

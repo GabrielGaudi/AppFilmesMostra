@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mostra_filmes/galeria_estomago.dart';
+import 'package:flutter_mostra_filmes/galeria_harry_potter.dart';
+import 'package:flutter_mostra_filmes/galeria_jumanji.dart';
+import 'galeria_poetas.dart';
 import 'menu_filmes.dart';
 import 'referencias.dart';
-import 'galeria.dart';
-import 'estomago_sobre.dart';
+import 'galeria_bela.dart';
+
 
 
 void main() {
@@ -53,10 +57,10 @@ class InicioPagina extends StatelessWidget {
           padding: EdgeInsets.only(left: 5.0, right: 7.5),
           children: [
             IconButton(icon: Image.asset("assets/imagens_principal/bela_fera_principal.png"), onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => const GaleriaPagina()));},),
-            IconButton(icon: Image.asset("assets/imagens_principal/jumanji_principal.png"), onPressed: (){},),
-            IconButton(icon: Image.asset("assets/imagens_principal/harry_principal.png"), onPressed: (){},),
-            IconButton(icon: Image.asset("assets/imagens_principal/estomago_principal.png"), onPressed: (){ },),
-            IconButton(icon: Image.asset("assets/imagens_principal/sociedade_poetas_principal.png"), onPressed: (){},),
+            IconButton(icon: Image.asset("assets/imagens_principal/jumanji_principal.png"), onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => const GaleriaJumanji()));},),
+            IconButton(icon: Image.asset("assets/imagens_principal/harry_principal.png"), onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => const GaleriaHP()));},),
+            IconButton(icon: Image.asset("assets/imagens_principal/estomago_principal.png"), onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => const GaleriaEstomago()));},),
+            IconButton(icon: Image.asset("assets/imagens_principal/sociedade_poetas_principal.png"), onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => GaleriaSociedadePoetas()));},),
           ],
         ),
       ),

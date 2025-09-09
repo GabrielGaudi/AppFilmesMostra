@@ -44,6 +44,11 @@ flutter:
     - assets/harry_potter_sobre/
     - assets/sociedade_poetas_mortos_sobre/
     - assets/galeria_estomago.json
+    - assets/galeria_jumanji/
+    - assets/galeria_harry_potter/
+    - assets/galeria_estomago/
+    - assets/galeria_poetas/
+
 
     
 

@@ -1,52 +1,56 @@
 [
 {
     "Nome":"Alan Parrish",
-    "Imagem":"assets"
+    "Imagem":"assets/jumanji_sobre/AlanParrish.jpg"
 },
 
 {
     "Nome":"Judy Shepherd",
-    "Imagem":"assets"
+    "Imagem":"assets/jumanji_sobre/Judy.jpg"
 },
 
 {
     "Nome":"Sarah Whittle",
-    "Imagem":"assets"
+    "Imagem":"assets/jumanji_sobre/SarahWhittle.jpeg"
 },
 
 {
     "Nome":"Van Pelt",
-    "Imagem":"assets"
+    "Imagem":"assets/jumanji_sobre/VanPelt.jpg"
 },
 
 {
     "Nome":"Peter Shepherd",
-    "Imagem":"assets"
+    "Imagem":"assets/jumanji_sobre/PeterShepherd.png"
 },
 
 {
     "Nome":"Nora Shepherd",
-    "Imagem":"assets"
+    "Imagem":"assets/jumanji_sobre/TiaNora.jpg"
 },
 
 {
     "Nome":"Bentley",
-    "Imagem":"assets"
+    "Imagem":"assets/jumanji_sobre/Bentley.jpg"
 },
 
 {
     "Nome":"Carol Parrish",
-    "Imagem":"assets"
+    "Imagem":"assets/jumanji_sobre/CarolParrish.jpg"
+},
+{
+    "Nome":"Sam Parrish",
+    "Imagem":"assets/jumanji_sobre/SamParrish.jpg"
 },
 
 {
     "Nome":"Young Alan",
-    "Imagem":"assets"
+    "Imagem":"assets/jumanji_sobre/young_alan.png"
 },
 
 {
     "Nome":"Young Sarah",
-    "Imagem":"assets"
+    "Imagem":"assets/jumanji_sobre/Sarah.jpg"
 }
 
 ]

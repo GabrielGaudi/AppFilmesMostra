@@ -1,52 +1,52 @@
 [
 {
     "Nome":"Harry Potter",
-    "Imagem":"assets"
+    "Imagem":"assets/harry_potter_sobre/harry.jpeg"
 },
 
 {
     "Nome":"Lord Voldemort",
-    "Imagem":"assets"
+    "Imagem":"assets/harry_potter_sobre/voldemort.jpeg"
 },
 
 {
     "Nome":"Hermione Granger",
-    "Imagem":"assets"
+    "Imagem":"assets/harry_potter_sobre/hermione.jpeg"
 },
 
 {
     "Nome":"Albus Dumbledore",
-    "Imagem":"assets"
+    "Imagem":"assets/harry_potter_sobre/dumbledore.jpeg"
 },
 
 {
     "Nome":"Rúbeo Hagrid",
-    "Imagem":"assets"
+    "Imagem":"assets/harry_potter_sobre/hagrid.jpeg"
 },
 
 {
     "Nome":"Severus Snape",
-    "Imagem":"assets"
+    "Imagem":"assets/harry_potter_sobre/snape.jpeg"
 },
 
 {
     "Nome":"Ron Weasley",
-    "Imagem":"assets"
+    "Imagem":"assets/harry_potter_sobre/ron.jpeg"
 },
 
 {
     "Nome":"Draco Malfoy",
-    "Imagem":"assets"
+    "Imagem":"assets/harry_potter_sobre/draco.jpeg"
 },
 
 {
     "Nome":"Quirino Quirrell",
-    "Imagem":"assets"
+    "Imagem":"assets/harry_potter_sobre/quirrell.jpeg"
 },
 
 {
     "Nome":"Minerva",
-    "Imagem":"assets"
+    "Imagem":"assets/harry_potter_sobre/minerva.jpeg"
 }
 
 ]
